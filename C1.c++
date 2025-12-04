@@ -4,7 +4,7 @@ class Room{
 public: 
 double length; 
 double breadth;
-Change the values and write the output received:double height;
+double height;
 double calculate_a(){ 
 return length*breadth; 
 }
