@@ -1,0 +1,33 @@
+class NumberThread extends Thread {
+ @Override
+ public void run() {
+ for (int i = 1; i <= 5; i++) {
+      System.out.println("Number: " + i);
+try {
+Thread.sleep(500);
+} catch (InterruptedException e) {
+System.out.println("Number Thread Interrupted");
+}
+ }
+ }
+}
+class LetterThread extends Thread {
+ @Override
+ public void run() {
+ for (char ch = 'A'; ch <= 'E'; ch++) {
+ System.out.println("Letter: " + ch);
+ try {
+    Thread.sleep(500);
+} catch (InterruptedException e) {
+System.out.println("Letter Thread Interrupted");
+}
+ }
+ }
+}
+public class MultiThreadDemo {
+ public static void main(String[] args) {
+ NumberThread numberThread = new NumberThread();
+ LetterThread letterThread = new LetterThread(); numberThread.start();
+ letterThread.start();
+ }
+}
